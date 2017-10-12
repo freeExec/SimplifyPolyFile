@@ -46,7 +46,7 @@ namespace Simplify
             }
             for (int i = 0; i < polyFile.Inner.Count; i++)
             {
-                pointsOrig += polyFile.Outer[i].Nodes.Count;
+                pointsOrig += polyFile.Inner[i].Nodes.Count;
                 var simplify = Simplify.SimplifyDouglasPeuckerPolyline(polyFile.Inner[i].Nodes, tolerance);
                 pointsSimp += simplify.Count;
                 polyFile.Inner[i] = new Polygon(simplify);
